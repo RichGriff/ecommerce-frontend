@@ -1,18 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CookiePolicy from '@/components/CookiePolicy'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Budda. | Online shop',
-  description: 'Demo e-commerce website',
-}
-
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode
@@ -20,7 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Header />
         {children}
+        <Footer />
+        <CookiePolicy />
       </body>
     </html>
   )
